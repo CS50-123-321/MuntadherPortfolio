@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static   %}
+<body>
+
+ 
+
+<main id="main">
+
+
+	{% if messages %}
+    {% for message in messages %}
+        <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %} 
+
+	{%if form %}
+	<form action="{% url "blog" %}" method="post"  class="">
+	{% csrf_token %}
+	{{ form }}
+	<input type="submit" value="Send it">
+	</form>
+	{%endif%}
+	
+   {% for item in blog_dic%}
+	<div class="container">
+		<div class="row topspace">
+			<div class="col-sm-8 col-sm-offset-2">
+										
+				<article class="post">
+					<header class="entry-header">
+						<div class="entry-meta"> 
+							<span class="posted-on"><time class="entry-date published" date="2013-09-27">{{item.dte}}</time></span>			
+						</div>
+						<h1 class="entry-title"><a href="{% url 'single' item.id %}" rel="bookmark">{{item.title}}!</a></h1>
+					</header>
+					<div class="entry-content">
+						<p>{{item.body}}</p>
+					</div>
+				</article>	
+			</div>	<!-- /container -->
+ 		{% endfor %}		
+
+	
+
+	
+
+</main>
+
+
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="{% static "assets/js/template.js"%}"></script>
+<script>
+	setTimeout(function(){
+      if ($('#msg').length > 0) {
+        $('#msg').remove();
+      }
+    }, 2000)
+  </script> 
+</body>
+
+{% endblock content %}

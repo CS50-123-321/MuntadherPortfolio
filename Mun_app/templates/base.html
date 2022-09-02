@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="TBC">
+	<meta name="author"      content="TBC)">
+	
+	<title>Muntadher</title>
+  
+	<link rel="shortcut icon" hrfef="{% static 'images/gt_favicon.png' %}">
+	<!--
+	<!-- Bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<!-- Icons -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<!-- Custom styles -->
+	
+    
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  
+	<!--[if lt IE 9]> <script src="static/js/html5shiv.js"></script> <![endif]-->
+</head>
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="1">
+		<h1 id="logo" class="text-center">
+            
+            <!-- #tbc: only for home should below pic show otherwise it shouldn't-->
+            <img class="img-circle" src="{% static 'images/guy.jpg' %}" alt="My image">
+            <span class="title">Muntadher Alabdaly relateds</span>
+			<span class="tagline">Welcome to my colorful world<br>
+				<a href="">Muntadher.Alabdaly@gmail.com</a></span>
+		</h1>
+	</div>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			</div>
+			
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href={% url 'index' %}>Home</a></li>
+					<li class="active"><a href={% url 'about' %}>About</a></li>
+					<li class="dropdown">
+						<a href={% url "explore" %} class="dropdown-toggle" data-toggle="dropdown">Explore <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href={% url 'explore' %}>explore</a></li>
+							 
+							<li><a href={% url 'blog' %}>Blog Post</a></li>
+						</ul>
+					</li>
+					<li><a  href={% url 'highlight' %}>Experiences &Highlights</a></li>
+				</ul>
+			
+			</div><!--/.nav-collapse -->			
+		</div>	
+	</nav>
+</header>
+{% block content %}
+{% endblock %}
+
+
+
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Contact Muntadher</h3>
+				<div class="widget-body">
+					<p>+9647713872686<br>
+						<a href="mailto:#">Muntadher.Alabdaly@gmail.com</a><br>
+						<br>
+						Iraq, Hilla, Alatayig
+					</p>	
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Follow me</h3>
+				<div class="widget-body">
+					<p class="follow-me-icons">
+						<a href="https://www.linkedin.com/in/muntadher-alabdaly-632753177/"><i class="fa fa-linkedin fa-2"></i></a>
+						<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+						<a href="https://github.com/CS50-123-321/"><i class="fa fa-github fa-2"></i></a>
+						<a href="https://m.facebook.com/muntadher97?refid=52&ref=m_notif&notif_t=comment_mention&__tn__=R"><i class="fa fa-facebook fa-2"></i></a>
+					</p>
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Text widget</h3>
+				<div class="widget-body">
+					<p>Later: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
+					<p>Later:Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Form widget</h3>
+				<div class="widget-body">
+					<p>+234 23 9873237<br>
+						<a href="mailto:#">123muntadher97#gmail.com</a><br>
+						<br>
+						234 Hidden Pond Road, Ashland City, TN 37015
+					</p>	
+				</div>
+			</div>
+
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
+
+<footer id="underfooter">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p>234 Hidden Pond Road, Ashland City, TN 37015 </p>
+				</div>
+			</div>
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p class="text-right">
+						Copyright &copy; 2022, Muntadher<br> 
+				</div>
+			</div>
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>

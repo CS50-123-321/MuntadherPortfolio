@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static   %}
+
+
+<body>
+
+<main id="main">
+
+	<div class="container">
+
+		<div class="row topspace">
+			
+			<!-- Sidebar -->
+			<aside class="col-md-4 sidebar sidebar-left">
+           
+				  
+				
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>Lateruseage</h4>
+						<p>Later usage</p>
+					</div>
+				</div>
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>This is Muntadher!</h4>
+						<p><img src="{% static "" %}" alt="Stil looking for a tv-series-friendly picture"></p>
+					</div>
+				</div>
+ 
+
+			</aside>			<!-- /Sidebar -->
+            
+				
+			<!-- Article main content -->
+			<article class="col-sm-8 maincontent">
+			{% for item in Series  %}
+				<header class="page-header">
+					<h1 class="page-title">{{item.SeriesName}}</h1>
+				</header>
+				<p>{{item.Ventingspace}}  </p>
+				{% if  item.media %}
+				<p><img src={{ item.media.url}} width="60%"></p>
+				{% endif %}
+				<blockquote> nOTHING YET</blockquote>
+				<p> Later use</p>				
+			<!-- /Article -->
+			{%endfor%}
+		</div>
+		
+	</div>	<!-- /container -->
+	
+</main>
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="{% static "assets/js/template.js"%}"></script>
+</body>
+</html>
+{% endblock content %}
+
+<h3>Fugit, laboriosam</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea a reiciendis vitae provident atque accusamus nam repudiandae accusantium perspiciatis consectetur. Ad, est, deleniti quis iusto labore iste totam cum maiores accusantium nobis error inventore explicabo laboriosam temporibus in rem nemo?</p>
+				<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus!</li>
+					<li>Laboriosam, aliquam totam asperiores nam velit voluptatum non quidem.</li>
+					<li>Voluptatem, libero quia voluptatum ab modi facere dolore assumenda?</li>
+					<li>Expedita, officia tenetur doloremque nulla temporibus ab voluptates adipisci.</li>
+					<li>Nostrum, nesciunt, inventore amet temporibus officia perferendis doloremque nulla.</li>
+					<li>Dolorum, ex earum maiores perspiciatis modi sequi odit mollitia.</li>
+				</ul>
+				<p>Eum, quasi, est, vitae, ipsam nobis consectetur ea aspernatur ad eos voluptatibus fugiat nisi perferendis impedit. Quam, nulla, excepturi, voluptate minus illo tenetur sint ab in culpa cumque impedit quibusdam. Saepe, molestias quia voluptatem natus velit fugiat omnis rem eos sapiente quasi quaerat aspernatur quisquam deleniti accusantium laboriosam odio id?</p>
+			</article>

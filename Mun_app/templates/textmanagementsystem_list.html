@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static   %}
+<body class="home">
+
+<main id="main">
+
+	<div class="container">
+		
+		<div class="row section topspace">
+			<div class="col-md-12">
+				<p class="lead text-center text-muted">Impact that is me!</a>. </p>
+			</div>
+		</div> <!-- / section -->
+		
+		<div class="row section featured topspace">
+			<h2 class="section-title"><span>Muntadherlized ideas</span></h2>
+			<div class="row">
+				<div class="col-sm-6 col-md-3">
+					<h3 class="text-center">Pre-Experience</h3>
+					<p>This space is where you can find my previous experience the national and international ones. Both community-based experiences and banafitial ones; I'm happy to help you undertake my exp</p>
+					<p class="text-center"><a href="{% url "previous_experience"  %}" class="btn btn-action">Read more</a></p>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<h3 class="text-center">Later usage</h3>
+					<p> I don't think they tried to market it to the billionaire, spelunking, base-jumping crowd. i did the same thing to gandhi, he didn't eat for three weeks. i once heard a wise man say there are no perfect men.</p>
+					<p> </p>
+					<p class="text-center"><a href="{% url "TvSeriesf" %}" class="btn btn-action">Read more</a></p>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<h3 class="text-center">My Bolgs</h3>
+					<p>It's a space where I write important life sociological concepts or else. I adopt what I believe in</p>
+					<p class="text-center"><a href="{% url "blog"  %}" class="btn btn-action">Read more</a></p>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<h3 class="text-center">Highlights</h3>
+					<p>I don't think they tried to market it to the billionaire, spelunking, base-jumping crowd. i did the same thing to gandhi, he didn't eat for three weeks. i once heard a wise man say there are no perfect men.</p>
+					<p class="text-center"><a href="{% url "highlight" %}"class="btn btn-action">Read more</a></p>
+				</div>
+			</div>
+		</div> <!-- / section -->
+	
+		<div class="row section recentworks topspace">
+			
+			<h2 class="section-title"><span>Highlights</span></h2>
+			{% for item in Highlights%}
+			<div class="thumbnails recentworks row">
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+					<a class="thumbnail" >
+						<span class="img">
+							<img src={{item.media.url}} >
+							<span class="cover"><span class="more">{{item.Body}}</span></span>
+						</span>
+						<span class="title">{{item.Body}}</span>
+					</a>
+					<span class="details"><a href="">Lateruseage</a> | <a href="">Lateruseage</a> | <a href="">Lateruseage</a></span>
+					<h4></h4>
+					<p></p>
+				</div>
+				{% endfor%}
+			</div>
+
+		</div> <!-- /section -->
+
+		<div class="row section topspace">
+			<div class="panel panel-cta"><div class="panel-body">
+				<div class="col-lg-8">
+					<p>A simple, nice-looking <b>call to action box</b>. Boxing is about respect. getting it for yourself, 
+					and taking it away from the other guy. no, this is mount everest. </p>
+
+			</div></div>
+		</div> <!-- /section -->
+
+		<div class="row section clients topspace">
+			<h2 class="section-title"><span>Where I work/Worked</span></h2>
+			<div class="col-lg-12">
+				<p>
+					<img src="{% static 'images/WL.png' %}">
+				</p>
+			</div>
+		</div> <!-- /section -->
+
+	</div>	<!-- /container -->
+
+</main>
+
+
+
+
+ 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="{% static "assets/js/template.js"%}""></script>
+</body>
+</html>
+{% endblock content %}

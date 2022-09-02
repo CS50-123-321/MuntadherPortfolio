@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static   %}
+
+<body> 
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<div id="comments">	
+					<h3 class="comments-title">3 Comments</h3>
+					<a href="#comment-form" class="leave-comment">Leave a Comment</a>
+					
+					<ol class="comments-list">
+						<li class="comment">
+							<div>
+								<img src="{% static "images/avatar_man.png" %}" alt="Avatar" class="avatar">					
+								<div class="comment-meta">
+									<span class="author"><a href="#">{{exploreData.Name}}</a></span>
+									<span class="date"><a href="#">January 22, 2022 at 4:55 pm</a></span>
+									
+								</div>
+
+								<div class="comment-body">
+									{{exploreData.Message}}<
+
+								</div>
+							</div>
+					</ol>
+					<div id="respond">
+						<h3 id="reply-title">You can drop Q or feedback</h3>
+						
+						<form action="{% url "explore"%}" method="post" id="commentform" class="">
+							{% csrf_token %}
+							
+							<div class="form-group">
+								<label for="inputName"><i class="none">Pick: </i></label>
+								{{form.type}}
+							</div>
+
+							<div class="form-group">
+								<label for="inputName"><i class="none">Message</i></label>
+								{{form.message}}
+							</div>
+
+							<div class="form-group">
+								<label for="none">Name</label>
+								{{ form.sender }}
+							</div>
+							<input type="submit" value="Send it-Email it ">
+						</form>
+					</div>
+
+
+					
+ 
+
+
+
+					</div> <!-- /respond -->
+				</div>
+			</div>
+		</div> <!-- /row comments -->
+		<div class="clearfix"></div>
+
+	</div>	<!-- /container -->
+
+</main>
+
+
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="{static "assets/js/template.js" }"></script>
+</body>
+</html>
+{% endblock content %}
+
+
+
+
+<input type="default_if_none"  class="form-control" placeholder="Sky is your limit!" value={{ form.sender }} >
